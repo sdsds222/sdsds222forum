@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.sdsds222.testtlias.mapper.UniAppMapper">
+    <!-- 插入数据到news表 -->
+    <insert id="addPublishContentToNews" parameterType="org.sdsds222.testtlias.pojo.PublishContent" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO news (author, classid, picurl, posttime, title)
+        VALUES (#{author}, #{cid}, #{picurl}, #{posttime}, #{title})
+    </insert>
+
+    <!-- 插入数据到detail表 -->
+    <insert id="addPublishContentToDetail" parameterType="org.sdsds222.testtlias.pojo.PublishContent">
+        INSERT INTO detail (author, classid, picurl, posttime, title, content, newsid)
+        VALUES (#{author}, #{cid}, #{picurl}, #{posttime}, #{title}, #{content}, #{id})
+    </insert>
+</mapper>
